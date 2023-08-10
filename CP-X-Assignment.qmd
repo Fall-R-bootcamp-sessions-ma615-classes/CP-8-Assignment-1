@@ -1,0 +1,14 @@
+---
+title: "CP-X-Assignment"
+format: pdf
+editor: visual
+---
+
+
+# Assignment Description and Exercises
+
+# Resources
+Lecture and cheat sheets
+
+# Extras
+Anything else
