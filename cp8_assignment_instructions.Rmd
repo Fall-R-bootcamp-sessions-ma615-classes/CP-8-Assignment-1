@@ -37,13 +37,13 @@ anscombe_tidy <- anscombe %>%
 ```
 
 ## Exercise 4
-Finally, lets make a ggplot!  Within `aes` assign x to x and y to y, use `anscombe_tidy` for data, and add `geom_point()`.  Assign your plot to `firstGGplot`
+Finally, lets make a ggplot!  Within `aes` assign x to x and y to y, use `anscombe_tidy` data to generate a plot with `geom_point()`.  Assign your plot to `firstGGplot`.
 
 ## Exercise 5
 Lets add some specifics about `group` to `shape` and `color`. First, assigned to `colorPlot`, assign `group` to `color` within your `aes()`.  Next, assigned to `shapePlot`, assign `group` to `shape` within `aes()`.  Finally, assigned to `greatPlot`, assign `group` to both `shape` and `color`.
 
 ## Exercise 6
-Now to draw each `group` in a seperate set of axis, use the facet_wrap function, specify that your `facet_wrap` makes 2 rows.
+Now to draw each `group` in a separate set of axis, use the facet_wrap function, specify that your `facet_wrap` makes 2 rows.
 Add the `facet_wrap` to `greatPlot` from before, updating `greatPlot`.
 
 Like this:
@@ -53,9 +53,9 @@ Like this:
 Lets add a line of best fit to each `group`!  We'll again update our `greatPlot`, this time adding the `stat_smooth` function.
 
 ## Exercise 8
-IN every plot you make label everything!  Lets add labels to our `greatPlot` using the `labs` function.  Updating your `greatPlot` just like before.  
+IN every plot you make, label everything!  Lets add labels to our `greatPlot` using the `labs` function.  Updating your `greatPlot` just like before.  
 Be sure you label `x`, `y`, `title`, `subtitle`, `caption`, and `color`.
 
 ## Exercise 9
-Finally, add theme_minimal() to your `greatPlot`, assign the new plot to `bestPlot`.
+Finally, add `theme_minimal(`) to your `greatPlot`, assign the new plot to `bestPlot`.
 
