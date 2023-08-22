@@ -1,0 +1,61 @@
+---
+title: "cp8_assignment_instructions"
+author: "Aidan O'Hara"
+date: "2023-08-22"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
+```
+
+
+## Exercise 1
+Run `?anscombe`, briefly research who Anscombe was and write a short description, assigned to the variable `whoWasAnscombe`
+
+## Exercise 2
+
+Use sapply to calculate the mean and variance of columns y1-y4 in `anscombe`. Assigned to `anscombeMeans` and `anscombeVar` respectively.
+
+Why is this response problematic?
+
+## Exercise 3
+run the following code in your script
+
+```{r}
+anscombe_tidy <- anscombe %>% 
+  pivot_longer(x1:y4) %>%
+  group_by(name) %>%
+  # Add a unique ID number to each group
+  mutate(row = row_number()) %>%
+  # Split the column at the first appearance of a number
+  separate(name, into = c('xy','group'), sep = "(?<=[a-zA-Z])\\s*(?=[0-9])") %>%
+  pivot_wider(names_from = xy, values_from = value) %>%
+  select(-row)
+```
+
+## Exercise 4
+Finally, lets make a ggplot!  Within `aes` assign x to x and y to y, use `anscombe_tidy` for data, and add `geom_point()`.  Assign your plot to `firstGGplot`
+
+## Exercise 5
+Lets add some specifics about `group` to `shape` and `color`. First, assigned to `colorPlot`, assign `group` to `color` within your `aes()`.  Next, assigned to `shapePlot`, assign `group` to `shape` within `aes()`.  Finally, assigned to `greatPlot`, assign `group` to both `shape` and `color`.
+
+## Exercise 6
+Now to draw each `group` in a seperate set of axis, use the facet_wrap function, specify that your `facet_wrap` makes 2 rows.
+Add the `facet_wrap` to `greatPlot` from before, updating `greatPlot`.
+
+Like this:
+`greatPlot <- greatPlot + facet_wrap()`
+
+## Exercise 7
+Lets add a line of best fit to each `group`!  We'll again update our `greatPlot`, this time adding the `stat_smooth` function.
+
+## Exercise 8
+IN every plot you make label everything!  Lets add labels to our `greatPlot` using the `labs` function.  Updating your `greatPlot` just like before.  
+Be sure you label `x`, `y`, `title`, `subtitle`, `caption`, and `color`.
+
+## Exercise 9
+Finally, add theme_minimal() to your `greatPlot`, assign the new plot to `bestPlot`.
+
